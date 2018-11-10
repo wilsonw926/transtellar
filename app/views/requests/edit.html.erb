@@ -1,0 +1,9 @@
+<%= form_for @request do |f| %>
+  <%= f.label :from_language%>
+  <%= f.select(:from_language, [['English','English'],['Chinese','Chinese'],['Spanish','Spanish'],['Arabic','Arabic'],['Russian','Russian'],['Portuguese','Portuguese'],['French','French'],['Filipino','Filipino'],['German','German'],['Korean','Korean'],['Japanese','Japanese'],['Malay','Malay'],['Thai','Thai'],['Hindi','Hindi']]) %>
+  <%= f.label :to_language%>
+  <%= f.select(:to_language, [['English','English'],['Chinese','Chinese'],['Spanish','Spanish'],['Arabic','Arabic'],['Russian','Russian'],['Portuguese','Portuguese'],['French','French'],['Filipino','Filipino'],['German','German'],['Korean','Korean'],['Japanese','Japanese'],['Malay','Malay'],['Thai','Thai'],['Hindi','Hindi']]) %>
+  <%= f.label :description%>
+  <%= f.text_field :description%>
+  <%= f.submit %>
+<% end %>

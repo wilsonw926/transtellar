@@ -1,0 +1,12 @@
+<% @requests.each do |r| %>
+  Request ID: <%= r.id %>
+  From: <%= r.from_language %>
+  To: <%= r.to_language %>
+  Description: <%= r.description %>
+  User ID: <%= r.user_id %>
+  <%= link_to "Edit", edit_request_path(id: r.id) %>
+  <%= link_to "Show", request_path(id: r.id) %>
+  <%= link_to "Delete", request_path(id: r.id), :method => :delete %><br>
+<% end %>
+
+<%= link_to "Create", new_request_path %>
