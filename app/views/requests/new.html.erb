@@ -5,5 +5,7 @@
   <%= f.select(:to_language, [['English','English'],['Chinese','Chinese'],['Spanish','Spanish'],['Arabic','Arabic'],['Russian','Russian'],['Portuguese','Portuguese'],['French','French'],['Filipino','Filipino'],['German','German'],['Korean','Korean'],['Japanese','Japanese'],['Malay','Malay'],['Thai','Thai'],['Hindi','Hindi']]) %>
   <%= f.label :description%>
   <%= f.text_field :description%>
+  <%= f.label :file%>
+  <%= f.file_field :file%>
   <%= f.submit %>
 <% end %>

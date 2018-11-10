@@ -51,7 +51,8 @@ class RequestsController < ApplicationController
       :to_language,
       :description,
       :user_id,
-      :size
+      :size,
+      :file
     )
   end
 
