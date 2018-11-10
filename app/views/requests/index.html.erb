@@ -7,9 +7,10 @@
   <%= link_to "Preview", rails_blob_path(r.file, disposition: 'preview') %>
   <%= link_to "Download", rails_blob_path(r.file, disposition: 'attachment') %>
   <br>
-  <%= link_to "Edit", edit_request_path(id: r.id) %>
-  <%= link_to "Show", request_path(id: r.id) %>
-  <%= link_to "Delete", request_path(id: r.id), :method => :delete %><br>
+  <% if current_user.id == r.user_id %>
+	  <%= link_to "Edit", edit_request_path(id: r.id) %>
+	  <%= link_to "Delete", request_path(id: r.id), :method => :delete %><br>
+	<%end%>
 <% end %>
-
+<br>
 <%= link_to "Create", new_request_path %>

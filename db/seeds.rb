@@ -8,7 +8,7 @@
 1.upto(10) do |n|
 	user = User.create(
 	  name: Faker::Name.name,
-	  email: "user#{1}@gmail.com",
+	  email: "user#{n}@gmail.com",
 	  password: "password",
 	  password_confirmation: "password"
 	)

@@ -3,8 +3,11 @@ From: <%= @request.from_language %>
 To: <%= @request.to_language %>
 Description: <%= @request.description %>
 User ID: <%= @request.user_id %>
-File: <%= @request.file %>
-<%= link_to "Edit", edit_request_path(id: @request.id) %>
-<%= link_to "Delete", request_path(id: @request.id), :method => :delete %><br>
-
+<%= link_to "Preview", rails_blob_path(@request.file, disposition: 'preview') %>
+<%= link_to "Download", rails_blob_path(@request.file, disposition: 'attachment') %>
+<% if current_user.id == @request.user_id %>
+	<%= link_to "Edit", edit_request_path(id: @request.id) %>
+	<%= link_to "Delete", request_path(id: @request.id), :method => :delete %><br>
+<%end%>
+<br>
 <%= link_to "Back", requests_path %>
