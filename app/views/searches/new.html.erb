@@ -1,0 +1,11 @@
+<%= form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :from_language_text %><br />
+    <%= f.select(:from_language_text, [['English','English'],['Chinese','Chinese'],['Spanish','Spanish'],['Arabic','Arabic'],['Russian','Russian'],['Portuguese','Portuguese'],['French','French'],['Filipino','Filipino'],['German','German'],['Korean','Korean'],['Japanese','Japanese'],['Malay','Malay'],['Thai','Thai'],['Hindi','Hindi']]) %>
+  </div>
+  <div class="field">
+    <%= f.label :to_language_text %><br />
+    <%= f.select(:to_language_text, [['English','English'],['Chinese','Chinese'],['Spanish','Spanish'],['Arabic','Arabic'],['Russian','Russian'],['Portuguese','Portuguese'],['French','French'],['Filipino','Filipino'],['German','German'],['Korean','Korean'],['Japanese','Japanese'],['Malay','Malay'],['Thai','Thai'],['Hindi','Hindi']]) %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

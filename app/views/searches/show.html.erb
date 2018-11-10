@@ -1,8 +1,6 @@
-<h1>All Requests</h1>
+<h1>Search Results</h1>
 
-<p><%= link_to "Advanced Filtering", new_search_path %></p>
-
-<% @requests.each do |r| %>
+<% @search.requests.each do |r| %>
   Request ID: <%= r.id %>
   From: <%= r.from_language %>
   To: <%= r.to_language %>
@@ -17,4 +15,3 @@
 	<%end%>
 <% end %>
 <br>
-<%= link_to "Create", new_request_path %>
