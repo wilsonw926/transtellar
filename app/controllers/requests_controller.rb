@@ -1,10 +1,15 @@
 class RequestsController < ApplicationController
+	before_action :authenticate_user!, only: [:show, :index, :new, :edit]
+
 	def index
 		@requests = Request.all
 	end
 
 	def new
     @request = Request.new
+  end
+
+  def home
   end
 
   def create
