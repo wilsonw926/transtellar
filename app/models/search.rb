@@ -9,7 +9,8 @@ class Search < ApplicationRecord
 	def find_requests
 	  requests = Request.all
 	  requests = Request.where("from_language like ?", "%#{from_language_text}%") if from_language_text.present?
-	  requests = Request.where("to_language like ?", "%#{from_language_text}%") if to_language_text.present?
+	  requests = Request.where("to_language like ?", "%#{to_language_text}%") if to_language_text.present?
+	  puts requests
 	  requests
 	end
 

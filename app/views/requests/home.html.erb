@@ -1,1 +1,34 @@
-Transtellar!
+ <%= image_tag 'transtellar.png' %>
+
+ <div class="panel welcome-panel">
+    <div class="row">
+        <div class="small-12 columns">
+            <h1>Welcome to Transtellar!</h1>
+            <p>Transtellar is here to connect people from all over the world to certified translators in order to obtain reliable translations to their documents.</p>
+            <p>Do you have medical, legal, official records needing translation? Select the languages you
+            	need translated from and to and upload your documents below! </p>
+            <p>Are you multilingual? Submit translations below and receive cryptocurrency for your contributions! </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 medium-4 columns">
+        <%= link_to requests_path, :class=>'button expand' do %>
+            I need translations
+        <% end %>
+    </div>
+
+        <div class="small-12 medium-4 columns">
+        <%= link_to requests_path, :class => 'button expand' do %>
+            I am a translator
+        <% end %>
+    </div>
+
+    <div class="small-12 medium-4 columns">
+        <%= link_to requests_path, :class => 'button expand' do %>
+            Contribute
+        <% end %>
+    </div>
+
+</div>

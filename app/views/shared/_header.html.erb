@@ -1,0 +1,44 @@
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><%= link_to 'Transtellar', root_path %></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+            <a href="#">
+                <span>Menu</span>
+            </a>
+        </li>
+    </ul>
+
+    <section class="top-bar-section">
+        <ul class="right">
+            <% if user_signed_in? %>
+                <li>
+                    <%= link_to 'Log Out', destroy_user_session_path, :class=>"nav-link", :method => "delete" %>
+                </li>
+            <% else %>
+                <li>
+                    <%= link_to 'Log In', new_user_session_path, { :class=>"nav-link" } %>
+                </li>
+
+                <li>
+                    <%= link_to 'Sign up', new_user_registration_path, { :class=>"nav-link" } %>
+                </li>
+            <% end %>
+            <br>
+        </ul>
+
+        <ul class="left">
+            <% if user_signed_in? %>
+                 <li>
+                    <%= link_to 'Requests', requests_path, { :class=>"nav-link" } %>
+                </li>
+
+                 <li>
+                    <%= link_to 'Edit Your User', edit_user_registration_path, { :class=>"nav-link" } %>
+                </li>
+            <% end %>
+            <br>
+        </ul>
+    </section>
+</nav>
