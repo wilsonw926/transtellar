@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Transtellar</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <title>Transtellar</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-<%= render 'layouts/header'%>
-  <body>
-    <%= yield %>
-  </body>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag 'common' %>
+        <%= javascript_include_tag 'vendor/modernizr' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <%= content_for :javascripts %>
+
+        <%= csrf_meta_tags %>
+    </head>
+
+    <body>
+        <%= render 'layouts/header'%>
+        <%= render :partial => 'shared/header' %>
+
+        <%= render :partial => 'shared/flash_messages' %>
+
+        <div class="content-row">
+            <div class="row">
+                <div class="small-12 columns">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+
+        <%= render :partial => 'shared/footer' %>
+    </body>
 </html>
